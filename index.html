@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Proofstone | High school math courses your team can teach</title>
+  <meta name="description" content="Complete Pre-Algebra, Algebra 1, Geometry and Algebra 2 courses for microschools, hybrid schools and small international schools, built so an adult who isn't a math specialist can teach them well.">
+  <link rel="canonical" href="https://proofstonemath.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://proofstonemath.com/">
+  <meta property="og:site_name" content="Proofstone">
+  <meta property="og:title" content="High school math courses your team can teach">
+  <meta property="og:description" content="Founding seats for fall 2027: $150 per student for the year, locked for three years.">
+  <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#12161C" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='3' y='3' width='10' height='10' fill='%23B2541A'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&display=swap">
+  <style>
+    :root {
+      --paper: #F6F7F9;
+      --sheet: #FFFFFF;
+      --ink: #1B2430;
+      --graphite: #56606E;
+      --grid: #DCE3EC;
+      --rule: #1B2430;
+      --amber: #B2541A;
+      --display: "Fraunces", Georgia, "Times New Roman", serif;
+      --body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #12161C;
+        --sheet: #161B22;
+        --ink: #E7EAEE;
+        --graphite: #A3ACB8;
+        --grid: #252D38;
+        --rule: #C9D1DB;
+        --amber: #E3925A;
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body);
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-line: underline;
+      text-decoration-color: var(--amber);
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover { color: var(--amber); }
+
+    :focus-visible {
+      outline: 3px solid var(--amber);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .wrap {
+      width: min(100% - 2.5rem, 48rem);
+      margin-inline: auto;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: var(--display);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      text-wrap: balance;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      margin: 2.25rem 0 0.5rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      max-width: 40rem;
+      text-wrap: pretty;
+    }
+
+    /* Header */
+
+    .site-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      padding-block: 1.75rem;
+    }
+
+    .wordmark {
+      font-family: var(--display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+
+    .wordmark:hover { color: var(--ink); }
+
+    .qed { color: var(--amber); }
+
+    .wordmark .qed {
+      margin-left: 0.2em;
+      font-size: 0.65em;
+    }
+
+    .header-link { font-size: 1rem; }
+
+    /* Hero */
+
+    .hero { padding-block: 3rem 4.5rem; }
+
+    .hero h1 {
+      max-width: 13ch;
+      font-size: clamp(2.6rem, 7.5vw, 4.75rem);
+      line-height: 1.02;
+    }
+
+    .lead {
+      margin-top: 1.75rem;
+      font-size: 1.25rem;
+      max-width: 38rem;
+    }
+
+    .founding { color: var(--graphite); }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 0.8rem 1.35rem;
+      border-radius: 4px;
+      background: var(--ink);
+      color: var(--paper);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background: var(--amber);
+      color: var(--paper);
+    }
+
+    /* Sections */
+
+    main > section:not(.hero) { padding-block: 3.5rem; }
+
+    /* The two-column proof */
+
+    .sheet {
+      margin-top: 1.75rem;
+      padding: clamp(1rem, 3vw, 2rem);
+      border: 1px solid var(--grid);
+      background-color: var(--sheet);
+      background-image:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+      background-size: 1.5rem 1.5rem;
+    }
+
+    .proof {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .proof th {
+      padding: 0 1rem 0.6rem;
+      border-bottom: 2px solid var(--rule);
+      font-family: var(--display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-align: left;
+    }
+
+    .proof th.n { border-bottom: 0; }
+
+    .proof td {
+      padding: 0.9rem 1rem;
+      vertical-align: top;
+    }
+
+    .proof .n {
+      width: 2.5rem;
+      padding-left: 0;
+      color: var(--graphite);
+      font-family: var(--display);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .proof .statement {
+      width: 44%;
+      font-weight: 600;
+    }
+
+    .proof .reason { border-left: 2px solid var(--rule); }
+
+    .proof tfoot td { padding-top: 1.5rem; }
+
+    .proof tfoot .n { font-size: 1.3rem; color: var(--ink); }
+
+    .conclusion {
+      font-family: var(--display);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .conclusion .qed {
+      float: right;
+      margin-left: 1rem;
+    }
+
+    /* Founding round */
+
+    .timeline {
+      margin: 1.75rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: 13rem 1fr;
+      gap: 0.25rem 1.5rem;
+      padding-block: 0.85rem;
+      border-top: 1px solid var(--grid);
+    }
+
+    .timeline li:last-child { border-bottom: 1px solid var(--grid); }
+
+    .timeline time {
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Questions */
+
+    .faq { margin: 0; }
+
+    .faq dt {
+      margin-top: 1.5rem;
+      font-weight: 600;
+    }
+
+    .faq dd {
+      max-width: 40rem;
+      margin: 0.25rem 0 0;
+    }
+
+    /* Closing and footer */
+
+    .closing .button { margin-top: 0.5rem; }
+
+    .site-footer {
+      padding-block: 2rem 3rem;
+      color: var(--graphite);
+      font-size: 0.95rem;
+    }
+
+    /* Narrow screens: each proof step stacks, reason under statement */
+
+    @media (max-width: 40rem) {
+      body { font-size: 1.0625rem; }
+
+      .lead { font-size: 1.15rem; }
+
+      .proof thead {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+      }
+
+      .proof tr {
+        display: grid;
+        grid-template-columns: 2rem 1fr;
+        padding-block: 0.6rem;
+      }
+
+      .proof td { padding: 0; }
+
+      .proof .n { grid-row: span 2; width: auto; }
+
+      .proof .statement { width: auto; }
+
+      .proof .reason {
+        grid-column: 2;
+        margin-top: 0.35rem;
+        padding-left: 0.75rem;
+      }
+
+      .proof tfoot td { padding-top: 0.75rem; }
+
+      .timeline li { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="wordmark" href="/">Proofstone<span class="qed" aria-hidden="true">∎</span></a>
+    <a class="header-link" href="mailto:matt@proofstonemath.com">Email Matt</a>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <h1>High school math courses your team can teach.</h1>
+      <p class="lead">Proofstone makes complete Pre-Algebra, Algebra 1, Geometry and Algebra 2 courses for microschools, hybrid schools and small international schools. Each one is built so an adult who isn't a math specialist can teach it well to a small group.</p>
+      <p class="founding">Founding seats for fall 2027 are $150 per student for the year, locked for three years.</p>
+      <div class="actions">
+        <a class="button" href="mailto:matt@proofstonemath.com?subject=Founding%20seats%20for%20fall%202027&amp;body=School%3A%20%0ACourse%3A%20%0ANumber%20of%20students%3A%20">Email to reserve seats</a>
+        <a href="https://mattbyers7.github.io/Area-of-a-Circle/">Try a sample lesson</a>
+      </div>
+    </section>
+
+    <section class="wrap" aria-labelledby="includes-title">
+      <h2 id="includes-title">What each course includes</h2>
+      <p>Everything a school needs to run the course, and why each piece is there.</p>
+      <div class="sheet">
+        <table class="proof" role="table">
+          <thead role="rowgroup">
+            <tr role="row">
+              <th role="columnheader" scope="col" class="n"><span class="visually-hidden">Step</span></th>
+              <th role="columnheader" scope="col">Statements</th>
+              <th role="columnheader" scope="col" class="reason">Reasons</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <td role="cell" class="n">1</td>
+              <td role="cell" class="statement">A short video lesson for each class day</td>
+              <td role="cell" class="reason">Students hear every new idea explained by a math teacher.</td>
+            </tr>
+            <tr role="row">
+              <td role="cell" class="n">2</td>
+              <td role="cell" class="statement">A day-by-day facilitator guide</td>
+              <td role="cell" class="reason">Whoever runs class knows what to say, what to ask and where students get stuck.</td>
+            </tr>
+            <tr role="row">
+              <td role="cell" class="n">3</td>
+              <td role="cell" class="statement">Student practice and group activities</td>
+              <td role="cell" class="reason">Every class day has work ready to hand out, as printable PDFs and editable files.</td>
+            </tr>
+            <tr role="row">
+              <td role="cell" class="n">4</td>
+              <td role="cell" class="statement">Quizzes and unit tests with answer keys</td>
+              <td role="cell" class="reason">The keys explain the usual mistakes, so grading doesn't need a specialist either.</td>
+            </tr>
+            <tr role="row">
+              <td role="cell" class="n">5</td>
+              <td role="cell" class="statement">A pacing calendar for 4-day or 5-day weeks</td>
+              <td role="cell" class="reason">The course fits the schedule you already run.</td>
+            </tr>
+            <tr role="row">
+              <td role="cell" class="n">6</td>
+              <td role="cell" class="statement">A monthly live office hour, plus email support</td>
+              <td role="cell" class="reason">A math teacher is on call when a question stumps the room.</td>
+            </tr>
+          </tbody>
+          <tfoot role="rowgroup">
+            <tr role="row">
+              <td role="cell" class="n"><span aria-hidden="true">∴</span><span class="visually-hidden">Therefore</span></td>
+              <td role="cell" class="conclusion" colspan="2">Your students get a full year of math, taught well.<span class="qed" aria-hidden="true">∎</span></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+
+    <section class="wrap" aria-labelledby="round-title">
+      <h2 id="round-title">How the founding round works</h2>
+      <p>A course gets built for fall 2027 once schools reserve 50 seats in it. If yours falls short, your deposit comes back in full.</p>
+      <ol class="timeline">
+        <li><time datetime="2027-04-30">By April 30, 2027</time><span>Reserve seats with a refundable $50-per-seat deposit.</span></li>
+        <li><time datetime="2027-05-07">By May 7, 2027</time><span>I confirm which courses reached 50 seats across all schools.</span></li>
+        <li><time datetime="2027-05-14">By May 14, 2027</time><span>If your course fell short, move your deposit to one that made it or get a full refund.</span></li>
+        <li><time datetime="2027-08-01">By August 1, 2027</time><span>The first two units arrive. Each later unit arrives at least four weeks before your calendar needs it.</span></li>
+        <li><time datetime="2027-08-15">By August 15, 2027</time><span>The remaining $100 per seat is due.</span></li>
+      </ol>
+
+      <h3>Price</h3>
+      <p>Founding schools pay $150 per student, per course, per year, locked through the 2029–30 school year. The regular price will be $225. There's no minimum, so two students means two seats.</p>
+      <p>If the course isn't working for your students in the first 30 days of classes, tell me and I'll refund the year in full.</p>
+
+      <h3>What I ask in return</h3>
+      <p>A 20-minute check-in each month during the first year, honest notes on what works and what doesn't, and a short testimonial only if you're happy with the course.</p>
+    </section>
+
+    <section class="wrap" aria-labelledby="faq-title">
+      <h2 id="faq-title">Questions schools ask</h2>
+      <dl class="faq">
+        <dt>Why not use a free curriculum?</dt>
+        <dd>Free curricula give you the math. This gives the adult teaching it a video lesson and a script for each day, plus answer keys that explain the mistakes.</dd>
+        <dt>Is it built on existing material?</dt>
+        <dd>Partly. It adapts an openly licensed curriculum, credited in the materials, and adds everything a non-specialist needs to teach it.</dd>
+        <dt>Is it aligned to standards?</dt>
+        <dd>Yes. Every course is aligned to the Common Core State Standards.</dd>
+        <dt>What if only two students need it?</dt>
+        <dd>Buy two seats. There's no minimum.</dd>
+      </dl>
+    </section>
+
+    <section class="wrap" aria-labelledby="about-title">
+      <h2 id="about-title">Who builds the courses</h2>
+      <p>I'm Matt Byers. I hold a Physics B.S. from Indiana University and an M.Ed. in Educational Technology from Moreland University, and I'm a licensed Kentucky math teacher.</p>
+      <p>As founding faculty at the Canadian School of Ulaanbaatar, I designed its grades 9–12 math curriculum, including AP Calculus. You can <a href="https://mattbyers7.github.io/Area-of-a-Circle/">try one of my interactive lessons</a>.</p>
+    </section>
+
+    <section class="wrap closing" aria-labelledby="reserve-title">
+      <h2 id="reserve-title">Reserve founding seats</h2>
+      <p>Email <a href="mailto:matt@proofstonemath.com">matt@proofstonemath.com</a> with your school, course and number of students, and I'll send a deposit link.</p>
+      <a class="button" href="mailto:matt@proofstonemath.com?subject=Founding%20seats%20for%20fall%202027&amp;body=School%3A%20%0ACourse%3A%20%0ANumber%20of%20students%3A%20">Email to reserve seats</a>
+    </section>
+  </main>
+
+  <footer class="site-footer wrap">
+    <p>© 2026 Proofstone</p>
+  </footer>
+</body>
+</html>
