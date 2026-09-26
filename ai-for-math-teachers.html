@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Proofstone | Math courses, lessons and teacher training by Matt Byers</title>
-  <meta name="description" content="Proofstone makes complete high school math courses, interactive lessons, and professional development on AI for math teachers, all designed and built by math teacher Matt Byers.">
-  <link rel="canonical" href="https://proofstonemath.com/">
+  <title>AI for math teachers | Proofstone</title>
+  <meta name="description" content="AI training for math teachers: plan lessons and make materials faster, catch AI's math mistakes, and set clear rules for student AI use. Online, in person or as coaching.">
+  <link rel="canonical" href="https://proofstonemath.com/ai-for-math-teachers.html">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://proofstonemath.com/">
+  <meta property="og:url" content="https://proofstonemath.com/ai-for-math-teachers.html">
   <meta property="og:site_name" content="Proofstone">
-  <meta property="og:title" content="Proofstone: math teaching that shows its work">
-  <meta property="og:description" content="High school math courses, interactive lessons, and professional development on AI for math teachers.">
+  <meta property="og:title" content="Save time with AI without trusting its math">
+  <meta property="og:description" content="AI training for math teachers: faster planning, catching AI's math mistakes, and clear rules for student AI use.">
   <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#12161C" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect x='3' y='3' width='10' height='10' fill='%23B2541A'/%3E%3C/svg%3E">
@@ -481,6 +481,74 @@
 
       .embed figcaption { padding-inline: 1.25rem; }
     }
+
+    /* Find the mistake */
+
+    .proof.math .statement {
+      font-family: var(--display);
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    .proof tr.is-flagged td { color: var(--amber); }
+
+    .question {
+      margin: 1.75rem 0 0;
+      font-weight: 600;
+    }
+
+    .choices {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin: 0.75rem 0 1.5rem;
+    }
+
+    .choice {
+      padding: 0.6rem 1.1rem;
+      border: 2px solid var(--ink);
+      border-radius: 4px;
+      background: transparent;
+      color: var(--ink);
+      font: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .choice:hover:not([aria-disabled="true"]) {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    .choice.is-wrong {
+      border-color: var(--grid);
+      color: var(--graphite);
+    }
+
+    .choice.is-right {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .choice[aria-disabled="true"] { cursor: default; }
+
+    .choice[aria-disabled="true"]:not(.is-right) { opacity: 0.55; }
+
+    .verdict {
+      margin: 0 0 1.5rem;
+      padding-left: 1rem;
+      border-left: 3px solid var(--amber);
+    }
+
+    .nowrap { white-space: nowrap; }
+
+    .verdict:empty {
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
   </style>
 </head>
 <body>
@@ -488,8 +556,8 @@
     <a class="wordmark" href="index.html">Proofstone<span class="qed" aria-hidden="true">∎</span></a>
     <nav class="menu" aria-label="Main">
       <ul>
-        <li><a class="is-current" href="index.html" aria-current="page">Home</a></li>
-        <li><a href="products.html">Products</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="is-current" href="products.html">Products</a></li>
         <li><a href="mailto:matt@proofstonemath.com">Email Matt</a></li>
       </ul>
     </nav>
@@ -497,19 +565,19 @@
 
   <main>
     <section class="hero wrap">
-      <h1>Math teaching that shows its work.</h1>
-      <p class="lead">Proofstone makes complete high school math courses, interactive lessons, and professional development on AI for math teachers. Everything is designed and built by me, Matt Byers, a math teacher and curriculum designer.</p>
+      <h1>Save time with AI without trusting its math.</h1>
+      <p class="lead">Proofstone's AI training shows math teachers how to plan lessons and make materials faster with AI, how to catch the math mistakes it makes, and how to set clear rules for how students use it. It runs as a live workshop, online or at your school, or as coaching for one teacher or a small team.</p>
       <div class="actions">
-        <a class="button" href="products.html">See products</a>
-        <a href="mailto:matt@proofstonemath.com">Email Matt</a>
+        <a class="button" href="mailto:matt@proofstonemath.com?subject=AI%20training%20for%20math%20teachers&amp;body=School%3A%20%0ANumber%20of%20teachers%3A%20%0AFormat%20(online%20workshop%2C%20in-person%20workshop%20or%20coaching)%3A%20%0AWhat%20you%27d%20like%20teachers%20to%20leave%20able%20to%20do%3A%20">Email to plan your training</a>
+        <a href="#check">Find the mistake below</a>
       </div>
     </section>
 
-    <section class="wrap" aria-labelledby="idea-title">
-      <h2 id="idea-title">The idea behind Proofstone</h2>
-      <p>Everything Proofstone makes rests on three statements. Here's the reason for each.</p>
+    <section class="wrap" id="check" aria-labelledby="check-title">
+      <h2 id="check-title">Find the mistake</h2>
+      <p>Here's a worked solution written the way AI tools write them: tidy, confident and even checked. One line is wrong. Which one?</p>
       <div class="sheet">
-        <table class="proof" role="table">
+        <table class="proof math" role="table">
           <thead role="rowgroup">
             <tr role="row">
               <th role="columnheader" scope="col" class="n"><span class="visually-hidden">Step</span></th>
@@ -520,41 +588,76 @@
           <tbody role="rowgroup">
             <tr role="row">
               <td role="cell" class="n">1</td>
-              <td role="cell" class="statement">Every step comes with a reason.</td>
-              <td role="cell" class="reason">Students hold on to math that makes sense to them.</td>
+              <td role="cell" class="statement"><i>x</i>² = 3<i>x</i></td>
+              <td role="cell" class="reason">Given</td>
             </tr>
             <tr role="row">
               <td role="cell" class="n">2</td>
-              <td role="cell" class="statement">Wrong answers get explained, not just marked.</td>
-              <td role="cell" class="reason">A mistake a student understands is one they stop making.</td>
+              <td role="cell" class="statement"><i>x</i> = 3</td>
+              <td role="cell" class="reason">Divide both sides by <i>x</i>.</td>
             </tr>
             <tr role="row">
               <td role="cell" class="n">3</td>
-              <td role="cell" class="statement">The adult in the room gets support too.</td>
-              <td role="cell" class="reason">A good math class shouldn't depend on having a math specialist on staff.</td>
+              <td role="cell" class="statement">3² = 9 and 3 · 3 = 9</td>
+              <td role="cell" class="reason">Substitute <i>x</i> = 3 to check.</td>
             </tr>
           </tbody>
           <tfoot role="rowgroup">
             <tr role="row">
               <td role="cell" class="n"><span aria-hidden="true">∴</span><span class="visually-hidden">Therefore</span></td>
-              <td role="cell" class="conclusion" colspan="2">Math that holds up in a real classroom.<span class="qed" aria-hidden="true">∎</span></td>
+              <td role="cell" class="conclusion" colspan="2">The only solution is <i>x</i> = 3.<span class="qed" aria-hidden="true">∎</span></td>
             </tr>
           </tfoot>
         </table>
       </div>
+      <p class="question" id="check-question">Which line is wrong?</p>
+      <div class="choices" role="group" aria-labelledby="check-question">
+        <button type="button" class="choice" data-line="1">Line 1</button>
+        <button type="button" class="choice" data-line="2">Line 2</button>
+        <button type="button" class="choice" data-line="3">Line 3</button>
+        <button type="button" class="choice" data-line="c">The conclusion</button>
+      </div>
+      <p class="verdict" id="check-verdict" aria-live="polite"></p>
+      <p>This one is simple on purpose. The same slip, dividing by something that might be zero, hides in trig and rational equations, and AI tools make it without any warning.</p>
     </section>
 
-    <section class="wrap" id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About me</h2>
-      <p>I'm Matt Byers, a math teacher and curriculum designer based in Louisville, Kentucky.</p>
-      <p>My first classroom was in China, right after I finished my physics degree at Indiana University. In 2020 I moved to Mongolia to teach science at Hobby School of Ulaanbaatar, and two years later I joined the Canadian School of Ulaanbaatar as founding faculty. There I built the school's grades 9–12 math curriculum from scratch, through AP Calculus, bringing together Mongolia's national standards and the curriculum of New Brunswick, Canada.</p>
-      <p>I hold an M.Ed. in Educational Technology from Moreland University and a Kentucky teaching license in mathematics. I design and code Proofstone's interactive lessons myself, and you can <a href="interactive-lessons.html">try one of them</a>.</p>
+    <section class="wrap" aria-labelledby="learn-title">
+      <h2 id="learn-title">What teachers learn</h2>
+      <p>The training covers three areas, weighted toward what your teachers need most.</p>
+
+      <h3>Plan lessons and make materials faster</h3>
+      <p>How to use AI to draft lesson plans, practice sets, leveled versions of a worksheet and exit tickets, with prompts that get usable math out of it instead of generic filler.</p>
+
+      <h3>Catch AI's math mistakes</h3>
+      <p>Where AI tools tend to go wrong in math, like slips in long calculations, lost solutions, answer keys that don't match their problems and word problems with impossible numbers, plus a quick routine for checking anything before it reaches students.</p>
+
+      <h3>Set rules for student AI use</h3>
+      <p>Clear rules for when students can use AI in math class and how they should show it, plus ways to design homework and tests that still show what each student understands.</p>
     </section>
 
-    <section class="wrap closing" aria-labelledby="contact-title">
-      <h2 id="contact-title">Contact</h2>
-      <p>Have a question about a product, or not sure which one fits your school? Email me at <a href="mailto:matt@proofstonemath.com">matt@proofstonemath.com</a>.</p>
-      <a class="button" href="mailto:matt@proofstonemath.com">Email Matt</a>
+    <section class="wrap" aria-labelledby="formats-title">
+      <h2 id="formats-title">How it runs</h2>
+      <p>Choose one format or combine them, depending on what your school needs.</p>
+      <dl class="ledger">
+        <div><dt>Live online workshop</dt><dd>For a department or a whole staff, over video.</dd></div>
+        <div><dt>In-person workshop</dt><dd>At your school, for a department or a whole staff.</dd></div>
+        <div><dt>One-on-one or small-team coaching</dt><dd>Built around the lessons your teachers are working on right now.</dd></div>
+      </dl>
+
+      <h3>Price</h3>
+      <p>Each school's plan is quoted to fit its size and format. Email me with your school, how many teachers, and the format you have in mind.</p>
+    </section>
+
+    <section class="wrap" aria-labelledby="who-title">
+      <h2 id="who-title">Who runs the training</h2>
+      <p>I'm Matt Byers, a licensed Kentucky math teacher with an M.Ed. in Educational Technology from Moreland University. As founding faculty at the Canadian School of Ulaanbaatar, I designed its grades 9–12 math curriculum, including AP Calculus.</p>
+      <p>I also do contract work evaluating AI models, including how they handle math, so finding their mistakes is part of my job.</p>
+    </section>
+
+    <section class="wrap closing" aria-labelledby="plan-title">
+      <h2 id="plan-title">Plan your training</h2>
+      <p>Email <a href="mailto:matt@proofstonemath.com">matt@proofstonemath.com</a> with your school, how many teachers, and what you'd like them to leave able to do.</p>
+      <a class="button" href="mailto:matt@proofstonemath.com?subject=AI%20training%20for%20math%20teachers&amp;body=School%3A%20%0ANumber%20of%20teachers%3A%20%0AFormat%20(online%20workshop%2C%20in-person%20workshop%20or%20coaching)%3A%20%0AWhat%20you%27d%20like%20teachers%20to%20leave%20able%20to%20do%3A%20">Email to plan your training</a>
     </section>
   </main>
 
@@ -568,5 +671,34 @@
       </ul>
     </nav>
   </footer>
+  <script>
+    (function () {
+      var section = document.getElementById("check");
+      var verdict = document.getElementById("check-verdict");
+      var rows = section.querySelectorAll("tbody tr");
+      var choices = section.querySelectorAll(".choice");
+      var settled = false;
+      var notes = {
+        "1": "Line 1 is the equation we started with, so it can't be wrong. Try another line.",
+        "2": "That's the one. Dividing by <i>x</i> only works if <i>x</i> isn't 0, and <i>x</i> = 0 is a solution too, since <span class='nowrap'>0² = 3 · 0</span>. The check in line 3 still passes, because a check can only confirm the answers you found. It can't find the ones you lost. Factoring keeps both: <span class='nowrap'><i>x</i>² − 3<i>x</i> = 0</span>, so <span class='nowrap'><i>x</i>(<i>x</i> − 3) = 0</span>, and <span class='nowrap'><i>x</i> = 0 or <i>x</i> = 3</span>.",
+        "3": "Line 3 is true: 9 really does equal 9. The trouble is what a check can't show you. Try another line.",
+        "c": "The conclusion is false, since <i>x</i> = 0 works too: <span class='nowrap'>0² = 3 · 0</span>. But it only repeats what an earlier line did. Which line lost <i>x</i> = 0?"
+      };
+      section.querySelector(".choices").addEventListener("click", function (event) {
+        var button = event.target.closest(".choice");
+        if (!button || settled) return;
+        var line = button.getAttribute("data-line");
+        verdict.innerHTML = notes[line];
+        if (line === "2") {
+          settled = true;
+          button.classList.add("is-right");
+          rows[1].classList.add("is-flagged");
+          Array.prototype.forEach.call(choices, function (b) { b.setAttribute("aria-disabled", "true"); });
+        } else {
+          button.classList.add("is-wrong");
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
